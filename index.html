@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harshitha R | Cyber Security Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b1d3f;
+    color: #ffffff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(90deg, #0b1d3f, #1a2b5b);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    border-bottom: 2px solid #ffffff;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #00f0ff;
+    margin-right: 20px;
+}
+
+.profile-info b {
+    font-size: 20px;
+    color: #00f0ff;
+}
+
+.profile-info p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #cce7ff;
+}
+
+.buttons button {
+    background: transparent;
+    color: #00f0ff;
+    border: 2px solid #00f0ff;
+    padding: 10px 20px;
+    margin-left: 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    background: #00f0ff;
+    color: #0b1d3f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.5);
+}
+
+.content {
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #1a2b5b;
+    border: 2px solid #00f0ff;
+    border-radius: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+footer {
+    background: linear-gradient(90deg, #0b1d3f, #1a2b5b);
+    color: #00f0ff;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    border-top: 2px solid #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .buttons {
+        margin-top: 15px;
+    }
+    .profile img {
+        width: 100px;
+        height: 100px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="profile">
+        <img id="profile-pic" src="profile.jpg.jpeg" alt="Harshitha Photo">
+        <div class="profile-info">
+            <b>Harshitha R</b>
+            <p>harshithaaa.2005@gmail.com</p>
+            <p>9986379449</p>
+            <p>Bangalore – 560036</p>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="showInternship()">Internship</button>
+        <button onclick="showCertificate()">Certificate</button>
+        <button onclick="showEducation()">Education</button>
+        <button onclick="showStrengths()">Strengths</button>
+        <button onclick="showProjects()">Projects</button>
+    </div>
+</div>
+
+<div class="content" id="display">
+    Click a button to view details
+</div>
+
+<footer>
+    IMTDA Infotech Private Limited
+</footer>
+
+<script>
+const display = document.getElementById('display');
+
+function showInternship() {
+    display.innerHTML =
+    "<b>Internship</b><br><br>" +
+    "Worked on data analysis and cloud-based projects using Python and AWS.";
+}
+
+function showCertificate() {
+    display.innerHTML =
+    "<b>Certificates</b><br><br>" +
+    "Cloud Computing, Data Science, Artificial Intelligence, Python, Soft Skills.";
+}
+
+function showEducation() {
+    display.innerHTML =
+    "<b>Education</b><br><br>" +
+    "BCA – Indus Valley Degree College<br>" +
+    "PUC – Sree Venkateswara College<br>" +
+    "10th – BVNHS School";
+}
+
+function showStrengths() {
+    display.innerHTML =
+    "<b>Strengths</b><br><br>" +
+    "Adaptable • Team Player • Positive Attitude • Problem Solving • Communication";
+}
+
+function showProjects() {
+    display.innerHTML =
+    "<b>Projects</b><br><br>" +
+    "Cancer Patient Analysis (Python)<br>" +
+    "AWS Cloud Projects<br>" +
+    "Sentiment Analysis System";
+}
+</script>
+
+</body>
+</html>
