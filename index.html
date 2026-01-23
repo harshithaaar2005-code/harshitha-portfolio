@@ -1,177 +1,428 @@
-<!DOCTYPE html>
+html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harshitha R | Cyber Security Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshitha R - Portfolio</title>
+    <style>
+        /* --- CSS STYLING --- */
+        :root {
+            --bg-color: #050f26; /* Deep Dark Blue */
+            --box-bg: #0a1935;
+            --accent-color: #00d9ff; /* Neon Cyan */
+            --text-color: #ffffff;
+            --secondary-text: #b0c4de;
+        }
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0b1d3f;
-    color: #ffffff;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: linear-gradient(90deg, #0b1d3f, #1a2b5b);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    border-bottom: 2px solid #ffffff;
-}
+        /* HEADER SECTION */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(to bottom, #020c1b, #050f26);
+        }
 
-.profile {
-    display: flex;
-    align-items: center;
-}
+        /* Profile Section (Left) */
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-.profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid #00f0ff;
-    margin-right: 20px;
-}
+        .profile-pic-ring {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+            padding: 3px; /* Space between border and image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.profile-info b {
-    font-size: 20px;
-    color: #00f0ff;
-}
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #333; /* Placeholder color */
+        }
 
-.profile-info p {
-    margin: 4px 0;
-    font-size: 14px;
-    color: #cce7ff;
-}
+        .profile-info h1 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
 
-.buttons button {
-    background: transparent;
-    color: #00f0ff;
-    border: 2px solid #00f0ff;
-    padding: 10px 20px;
-    margin-left: 12px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
+        .profile-info p {
+            margin: 2px 0;
+            font-size: 0.85rem;
+            color: var(--secondary-text);
+        }
 
-.buttons button:hover {
-    background: #00f0ff;
-    color: #0b1d3f;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.5);
-}
+        .profile-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-.content {
-    width: 85%;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #1a2b5b;
-    border: 2px solid #00f0ff;
-    border-radius: 15px;
-    font-size: 16px;
-    line-height: 1.6;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-    transition: 0.3s;
-}
+        .profile-info a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
 
-footer {
-    background: linear-gradient(90deg, #0b1d3f, #1a2b5b);
-    color: #00f0ff;
-    text-align: center;
-    padding: 20px;
-    font-weight: bold;
-    border-top: 2px solid #ffffff;
-}
+        /* Navigation Buttons (Right) */
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-@media screen and (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .buttons {
-        margin-top: 15px;
-    }
-    .profile img {
-        width: 100px;
-        height: 100px;
-    }
-}
-</style>
+        .nav-btn {
+            background: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-transform: capitalize;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+        }
+
+        /* MAIN CONTENT AREA */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .content-display {
+            width: 100%;
+            max-width: 900px;
+            min-height: 200px;
+            border: 1px solid var(--accent-color);
+            background-color: rgba(10, 25, 53, 0.6);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.15);
+            position: relative;
+        }
+
+        /* Content Sections */
+        .tab-content {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block; /* Show when active */
+        }
+
+        .tab-content h2 {
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        .default-msg {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: var(--secondary-text);
+            font-size: 1.2rem;
+        }
+
+        ul {
+            list-style-type: none; /* Remove bullets for cleaner look */
+            padding-left: 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+
+        .project-item, .exp-item {
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        strong {
+            color: #fff;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #081226;
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .company-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .company-link:hover {
+            text-shadow: 0 0 8px var(--accent-color);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .profile-container {
+                flex-direction: column;
+            }
+            .nav-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="header">
-    <div class="profile">
-        <img id="profile-pic" src="profile.jpg.jpeg" alt="Harshitha Photo">
-        <div class="profile-info">
-            <b>Harshitha R</b>
-            <p>harshithaaa.2005@gmail.com</p>
-            <p>9986379449</p>
-            <p>Bangalore – 560036</p>
+    <!-- Header / Profile Section -->
+    <header>
+        <div class="profile-container">
+            <div class="profile-pic-ring">
+                <!-- Replace src with your actual image path -->
+                <img src="https://ui-avatars.com/api/?name=Harshitha+R&background=random&color=fff" alt="Harshitha R" class="profile-pic">
+            </div>
+            <div class="profile-info">
+                <h1>Harshitha R</h1>
+                <!-- Clickable Email -->
+                <p><a href="mailto:harshithaaa.2005@gmail.com">harshithaaa.2005@gmail.com</a></p>
+                <!-- Clickable Phone -->
+                <p><a href="tel:9986379449">9986379449</a></p>
+                <p>Bangalore – 560036</p>
+            </div>
         </div>
+
+        <!-- Navigation Buttons -->
+        <nav class="nav-buttons">
+            <button class="nav-btn" onclick="showContent('about')">About Me</button>
+            <button class="nav-btn" onclick="showContent('skills')">Skills</button>
+            <button class="nav-btn" onclick="showContent('education')">Education</button>
+            <button class="nav-btn" onclick="showContent('experience')">Internship</button>
+            <button class="nav-btn" onclick="showContent('projects')">Projects</button>
+            <button class="nav-btn" onclick="showContent('certifications')">Certificates</button>
+            <button class="nav-btn" onclick="showContent('contact')">Contact</button>
+        </nav>
+    </header>
+
+    <!-- Main Content Display Box -->
+    <main>
+        <div class="content-display" id="displayBox">
+            
+            <!-- Default Message (Visible initially) -->
+            <div id="default-msg" class="default-msg">
+                Click a button to view details
+            </div>
+
+            <!-- About Me Content -->
+            <div id="about" class="tab-content">
+                <h2>About Me</h2>
+                <p><strong>BCA Student & AI/ML Intern</strong></p>
+                <p>BCA student and AI & ML trainee with a strong foundation in Python development and data analysis.</p>
+                <p>Hands-on experience with real-world datasets through academic and internship projects.</p>
+                <p>Skilled in data visualization and basic machine learning concepts. Passionate about applying AI and data-driven approaches to solve real-world problems.</p>
+                <p>Currently pursuing BCA at Indus Valley Degree College and continuously enhancing technical skills.</p>
+            </div>
+
+            <!-- Skills Content -->
+            <div id="skills" class="tab-content">
+                <h2>Skills</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h3>Programming & Data</h3>
+                        <ul>
+                            <li>🔹 Python Programming</li>
+                            <li>🔹 Pandas, NumPy</li>
+                            <li>🔹 Data Cleaning & Processing</li>
+                            <li>🔹 Visualization: Matplotlib, Seaborn</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>AI & Tools</h3>
+                        <ul>
+                            <li>🔹 Machine Learning (Basics)</li>
+                            <li>🔹 Predictive Analysis</li>
+                            <li>🔹 Jupyter Notebook, Git & GitHub</li>
+                            <li>🔹 Web/DB: HTML, CSS, SQL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Content -->
+            <div id="education" class="tab-content">
+                <h2>Education</h2>
+                <ul>
+                    <li class="project-item">
+                        <strong>BCA – Indus Valley Degree College</strong><br>
+                        5th Semester | CGPA: 9.15
+                    </li>
+                    <li class="project-item">
+                        <strong>PUC (12th) – Sree Venkateshwara PU College</strong><br>
+                        Percentage: 80.88%
+                    </li>
+                    <li class="project-item">
+                        <strong>SSLC (10th) – Bharathiya Vidyanikethana High School</strong><br>
+                        Percentage: 70.4%
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Experience/Internship Content -->
+            <div id="experience" class="tab-content">
+                <h2>Internship Experience</h2>
+                <div class="exp-item">
+                    <h3>Intern – IMTDA Infotech Private Limited</h3>
+                    <p>📍 Vishakhapatnam, Andhra Pradesh, India</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>• Working as an AI & ML Intern on practical, application-based tasks.</li>
+                        <li>• Performed Python-based data analysis and data preprocessing.</li>
+                        <li>• Worked with Jupyter Notebook, Pandas, Matplotlib, and Seaborn.</li>
+                        <li>• Implemented basic machine learning techniques for data understanding.</li>
+                        <li>• Developed analytical thinking through real-world datasets.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Projects Content -->
+            <div id="projects" class="tab-content">
+                <h2>Projects</h2>
+                <div class="project-item">
+                    <strong>Cancer Patient Analysis:</strong> Analyzed patient datasets using Python, preprocessing with Pandas, visualized with Matplotlib & Seaborn.
+                </div>
+                <div class="project-item">
+                    <strong>Sentiment Analysis System:</strong> Built text-based sentiment classification system using Python.
+                </div>
+                <div class="project-item">
+                    <strong>Business Card Organizer:</strong> Designed digital system to organize business card data with structured handling.
+                </div>
+                <div class="project-item">
+                    <strong>Data Visualization Projects:</strong> Created visual reports using Pandas, Matplotlib, and Seaborn for insights.
+                </div>
+                
+                <h3>Publication</h3>
+                <div class="project-item">
+                    <strong>Deep Emotion:</strong> A Real-Time AI Framework for Human Emotion Recognition Using Deep Learning.<br>
+                    <em>Published at: East Point of Education</em>
+                </div>
+            </div>
+
+            <!-- Certifications Content -->
+            <div id="certifications" class="tab-content">
+                <h2>Certifications</h2>
+                <ul>
+                    <li>📜 Basics of Python – Dream a Dream</li>
+                    <li>📜 AI & Data Science – Aplues EdTech</li>
+                    <li>📜 Soft Skills Training – Magic Bus Foundation</li>
+                    <li>📜 Cloud Computing Certificate</li>
+                </ul>
+            </div>
+
+            <!-- Contact Content -->
+            <div id="contact" class="tab-content">
+                <h2>Contact & Links</h2>
+                <ul style="font-size: 1.1rem;">
+                    <li>📧 <a href="mailto:harshithaaa.2005@gmail.com" style="color:#fff;">Email Me</a></li>
+                    <li>📱 <a href="tel:9986379449" style="color:#fff;">WhatsApp / Phone</a></li>
+                    <li>💻 <a href="#" style="color:#fff;">GitHub Profile</a></li>
+                    <li>🔗 <a href="#" style="color:#fff;">LinkedIn Profile</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+    <div style="text-align: center; padding: 15px;">
+        <a href="https://imtdainfotech.com/" target="_blank" class="company-link">
+            IMTDA Infotech Private Limited
+        </a>
+        <p style="color: var(--secondary-text); margin: 5px 0; font-size: 0.9rem;">
+            <strong>Contact:</strong> <a href="mailto:imtdainfotech@gmail.com" style="color: var(--accent-color);">imtdainfotech@gmail.com</a> | +91 6302305973
+        </p>
+        <p style="color: gray; margin: 0; font-size: 0.85rem;">Bheemunipatnam, Visakhapatnam, Andhra Pradesh – 531163, India | Bangalore, India</p>
     </div>
-
-    <div class="buttons">
-        <button onclick="showInternship()">Internship</button>
-        <button onclick="showCertificate()">Certificate</button>
-        <button onclick="showEducation()">Education</button>
-        <button onclick="showStrengths()">Strengths</button>
-        <button onclick="showProjects()">Projects</button>
-    </div>
-</div>
-
-<div class="content" id="display">
-    Click a button to view details
-</div>
-
-<footer>
-    IMTDA Infotech Private Limited
 </footer>
 
-<script>
-const display = document.getElementById('display');
 
-function showInternship() {
-    display.innerHTML =
-    "<b>Internship</b><br><br>" +
-    "Worked on data analysis and cloud-based projects using Python and AWS.";
-}
+    <script>
+        // --- JAVASCRIPT LOGIC ---
+        function showContent(sectionId) {
+            // 1. Hide the default message
+            document.getElementById('default-msg').style.display = 'none';
 
-function showCertificate() {
-    display.innerHTML =
-    "<b>Certificates</b><br><br>" +
-    "Cloud Computing, Data Science, Artificial Intelligence, Python, Soft Skills.";
-}
+            // 2. Hide all content sections
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
 
-function showEducation() {
-    display.innerHTML =
-    "<b>Education</b><br><br>" +
-    "BCA – Indus Valley Degree College<br>" +
-    "PUC – Sree Venkateswara College<br>" +
-    "10th – BVNHS School";
-}
+            // 3. Remove 'active' class from all buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
 
-function showStrengths() {
-    display.innerHTML =
-    "<b>Strengths</b><br><br>" +
-    "Adaptable • Team Player • Positive Attitude • Problem Solving • Communication";
-}
+            // 4. Show the selected content
+            const selectedContent = document.getElementById(sectionId);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
 
-function showProjects() {
-    display.innerHTML =
-    "<b>Projects</b><br><br>" +
-    "Cancer Patient Analysis (Python)<br>" +
-    "AWS Cloud Projects<br>" +
-    "Sentiment Analysis System";
-}
-</script>
-
+            // 5. Highlight the clicked button
+            // Note: In a real scenario, we'd pass 'this' to the function, 
+            // but here we simply find the button with the matching onclick text roughly
+            // or simply let the user click effect handle it.
+            // For better UX, let's manually add active class to the button clicked:
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
